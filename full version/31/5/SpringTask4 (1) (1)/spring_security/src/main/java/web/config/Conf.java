@@ -44,34 +44,8 @@ import java.util.Properties;
 @EnableWebMvc
 @ComponentScan("web")
 public class Conf implements WebMvcConfigurer  {
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/js/**").addResourceLocations("/html/js/");
-        registry.addResourceHandler("/css/**").addResourceLocations("/html/css/");
-        registry.addResourceHandler("/img/**").addResourceLocations("/html/images/");
-    }
 
-    @Bean
-    public ITemplateResolver templateResolver() {
-        SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
-        templateResolver.setPrefix( "/html/" );
-        templateResolver.setSuffix( ".html" );
-        templateResolver.setTemplateMode( "HTML5" );
-        return templateResolver;
-    }
 
-    @Bean
-    public SpringTemplateEngine templateEngine() {
-        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-        templateEngine.setTemplateResolver( templateResolver() );
-        return templateEngine;
-    }
 
-    @Bean
-    public ViewResolver viewResolver() {
-        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
-        viewResolver.setTemplateEngine( templateEngine() );
-        viewResolver.setOrder( 1 );
-        return viewResolver;
-    }
+
 }

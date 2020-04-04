@@ -23,7 +23,7 @@ $(function ($) {
                 url: "/admin/add",
                 type: 'POST',
                 data: result,
-                dataType: 'json',
+               // dataType: 'json',
                 context: document.getElementById('#ajax'),
 
                 success : function (data, status) {
@@ -41,6 +41,7 @@ $(function ($) {
 
 function succsess(data) {
     alert('1');
+    console.log(1);
     console.log(data);
     $('#someTabs a[href="#mainTab"]').tab('show');
     //  последний блок в таблице
