@@ -18,6 +18,11 @@
     <script src="http://localhost:8080/js/delete.js"></script>
     <script src="http://localhost:8080/js/edit.js"></script>
 
+    <script src="js/script.js"></script>
+    <script src="js/add.js"></script>
+    <script src="js/delete.js"></script>
+    <script src="js/edit.js"></script>
+
     <style>
         #ajax {
             top: 50%;
@@ -35,7 +40,7 @@
     </style>
 </head>
 <body>
-<div id="ajax"></div>
+<div class="myWindow" id="ajax"></div>
 
 <nav class="navbar navbar-expand-lg  navbar-red bg-dark shadow">
     <a class="navbar-brand" href="#"><span th:text="${user.email}"/></a>
@@ -97,7 +102,6 @@
                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                             <h5 class="h5">All users</h5>
                         </div>
-                        //
                         <form action="/admin/delete" method="post">
                             <form action="#" method="post">
                                 <table class="table table-striped table-hover table-bordered">

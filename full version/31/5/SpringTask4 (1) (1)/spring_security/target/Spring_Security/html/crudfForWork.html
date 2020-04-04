@@ -1,6 +1,8 @@
-<html><!--<html lang="en">-->
+<!DOCTYPE html>
+<html>
+<!--<html lang="en">-->
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
     <title>Admin panel</title>
@@ -20,8 +22,6 @@
     <script src="js/add.js"></script>
     <script src="js/delete.js"></script>
     <script src="js/edit.js"></script>
-
-    <script src="/js/add.js"></script>
     <style>
         #ajax {
             top: 50%;
@@ -37,13 +37,12 @@
         }
 
     </style>
-
 </head>
 <body>
 <div id="ajax"></div>
 
 <nav class="navbar navbar-expand-lg  navbar-red bg-dark shadow">
-    <a class="navbar-brand" href="#"><span>2@2.ru</span></a>
+    <a class="navbar-brand" href="#"><span></span></a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
@@ -51,13 +50,11 @@
                 <a class="nav-link" href="#">with roles:</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"> <span style="margin-right: 5px">ADMIN</span><span
-                        style="margin-right: 5px">USER</span><span style="margin-right: 5px">GUEST</span><span
-                        style="margin-right: 5px">SUPERADMIN</span></a>
+                <a class="nav-link" href="#">  </a>
             </li>
         </ul>
         <ul class="navbar-nav mr-4">
-            <li class="nav-item" text-nowrap="">
+            <li class=nav-item text-nowrap>
                 <a class="nav-link" href="/logout">Logout</a>
             </li>
         </ul>
@@ -92,7 +89,7 @@
                     <a class="nav-link active" data-toggle="tab" href="#mainTab" id="table">Users table </a>
                 </li>
                 <li class="nav-item" id="nus">
-                    <a class="nav-link" data-toggle="tab" href="#addUser" id="btnAdd2">New User</a>
+                    <a class="nav-link" data-toggle="tab" href="#addUser">New User</a>
                 </li>
             </ul>
 
@@ -103,225 +100,262 @@
                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                             <h5 class="h5">All users</h5>
                         </div>
+                        //
                         <form action="/admin/delete" method="post">
-                            <!--                            <table class="table table-striped table-hover table-bordered">-->
-                            <table class="table table-striped table-hover">
-                                <thead>
-                                <tr>
-                                    <th class="h5">ID</th>
-                                    <th class="h5">First Name</th>
-                                    <th class="h5">Last Name</th>
-                                    <th class="h5">Age</th>
-                                    <th class="h5">Email</th>
-                                    <th class="h5">Password</th>
-                                    <th class="h5">Role</th>
-                                    <th class="h5">Edit</th>
-                                    <th class="h5">Delete</th>
-                                </tr>
-                                </thead>
+                            <form action="#" method="post">
+                                <table class="table table-striped table-hover table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th class="h5">ID</th>
+                                        <th class="h5">First Name</th>
+                                        <th class="h5">Last Name</th>
+                                        <th class="h5">Age</th>
+                                        <th class="h5">Email</th>
+                                        <th class="h5">Password</th>
+                                        <th class="h5">Role</th>
+                                        <th class="h5">Edit</th>
+                                        <th class="h5">Delete</th>
+                                    </tr>
+                                    </thead>
 
-                                <tr>
-                                    <td><span>462</span></td>
-                                    <td><span>2</span></td>
-                                    <td><span>2</span></td>
-                                    <td><span>2123</span></td>
-                                    <td><span>2@2.ru</span></td>
-                                    <td><span>2</span></td>
-                                    <td>
-                                        <span style="margin-right: 5px">ADMIN</span><span
-                                            style="margin-right: 5px">USER</span><span
-                                            style="margin-right: 5px">GUEST</span><span style="margin-right: 5px">SUPERADMIN</span>
-                                    </td>
-                                    <td>
-                                        <div class="form-row text-center">
-                                            <div class="col-12">
-                                                <button class="btn btn-primary " data-age="2123"
-                                                        data-email="2@2.ru" data-firstname="2" data-id="462"
-                                                        data-lastname="2" data-password="2"
-                                                        data-roles="[Role{role='ADMIN'}, Role{role='USER'}, Role{role='GUEST'}, Role{role='SUPERADMIN'}]"
-                                                        data-target="#myModal"
-                                                        data-toggle="modal"
-                                                        type="button">Edit
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-row text-center">
-                                            <div class="col-12">
-                                                <button class="btn btn-danger " data-age="2123"
-                                                        data-email="2@2.ru" data-firstname="2" data-id="462"
-                                                        data-lastname="2" data-password="2"
-                                                        data-roles="[Role{role='ADMIN'}, Role{role='USER'}, Role{role='GUEST'}, Role{role='SUPERADMIN'}]"
-                                                        data-target="#myModalDelete"
-                                                        data-toggle="modal"
-                                                        type="button">Delete
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td><span>462</span></td>
+                                        <td><span>2</span></td>
+                                        <td><span>2</span></td>
+                                        <td><span>2123</span></td>
+                                        <td><span>2@2.ru</span></td>
+                                        <td><span>2</span></td>
 
-                                <tr>
-                                    <td><span>476</span></td>
-                                    <td><span>123</span></td>
-                                    <td><span>123</span></td>
-                                    <td><span>100</span></td>
-                                    <td><span>1231123231231@1.ru</span></td>
-                                    <td><span>123</span></td>
-                                    <td>
-                                        <span style="margin-right: 5px">GUEST</span><span
-                                            style="margin-right: 5px">USER</span><span
-                                            style="margin-right: 5px">ADMIN</span><span style="margin-right: 5px">SUPERADMIN</span>
-                                    </td>
-                                    <td>
-                                        <div class="form-row text-center">
-                                            <div class="col-12">
-                                                <button class="btn btn-primary " data-age="100"
-                                                        data-email="1231123231231@1.ru" data-firstname="123"
-                                                        data-id="476"
-                                                        data-lastname="123" data-password="123"
-                                                        data-roles="[Role{role='GUEST'}, Role{role='USER'}, Role{role='ADMIN'}, Role{role='SUPERADMIN'}]"
-                                                        data-target="#myModal"
-                                                        data-toggle="modal"
-                                                        type="button">Edit
-                                                </button>
+                                        <td>
+                                            <span style="margin-right: 5px">ADMIN</span><span style="margin-right: 5px">USER</span><span style="margin-right: 5px">GUEST</span><span style="margin-right: 5px">SUPERADMIN</span>
+                                        </td>
+                                        <td>
+                                            <div class="form-row text-center">
+                                                <div class="col-12">
+                                                    <button class="btn btn-primary " data-target="#myModal"
+                                                            data-toggle="modal"
+                                                            data-ID="462"
+                                                            data-age="2123"
+                                                            data-email="2@2.ru"
+                                                            data-firstName="2"
+                                                            data-lastName="2"
+                                                            data-password="2"
+                                                            data-roles="[Role{role=&#39;ADMIN&#39;}, Role{role=&#39;USER&#39;}, Role{role=&#39;GUEST&#39;}, Role{role=&#39;SUPERADMIN&#39;}]"
+                                                            type="button">Edit
+                                                    </button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-row text-center">
-                                            <div class="col-12">
-                                                <button class="btn btn-danger " data-age="100"
-                                                        data-email="1231123231231@1.ru" data-firstname="123"
-                                                        data-id="476"
-                                                        data-lastname="123" data-password="123"
-                                                        data-roles="[Role{role='GUEST'}, Role{role='USER'}, Role{role='ADMIN'}, Role{role='SUPERADMIN'}]"
-                                                        data-target="#myModalDelete"
-                                                        data-toggle="modal"
-                                                        type="button">Delete
-                                                </button>
+                                        </td>
+                                        <td>
+                                            <div class="form-row text-center">
+                                                <div class="col-12">
+                                                    <button class="btn btn-danger " data-target="#myModalDelete"
+                                                            data-toggle="modal"
+                                                            data-ID="462"
+                                                            data-age="2123"
+                                                            data-email="2@2.ru"
+                                                            data-firstName="2"
+                                                            data-lastName="2"
+                                                            data-password="2"
+                                                            data-roles="[Role{role=&#39;ADMIN&#39;}, Role{role=&#39;USER&#39;}, Role{role=&#39;GUEST&#39;}, Role{role=&#39;SUPERADMIN&#39;}]"
+                                                            type="button">Delete
+                                                    </button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td><span>488</span></td>
-                                    <td><span>4</span></td>
-                                    <td><span>4</span></td>
-                                    <td><span>4</span></td>
-                                    <td><span>4email@qwe.ru</span></td>
-                                    <td><span>4</span></td>
-                                    <td>
-                                        <span style="margin-right: 5px">ADMIN</span>
-                                    </td>
-                                    <td>
-                                        <div class="form-row text-center">
-                                            <div class="col-12">
-                                                <button class="btn btn-primary " data-age="4"
-                                                        data-email="4email@qwe.ru" data-firstname="4" data-id="488"
-                                                        data-lastname="4" data-password="4"
-                                                        data-roles="[Role{role='ADMIN'}]"
-                                                        data-target="#myModal" data-toggle="modal"
-                                                        type="button">Edit
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-row text-center">
-                                            <div class="col-12">
-                                                <button class="btn btn-danger " data-age="4"
-                                                        data-email="4email@qwe.ru" data-firstname="4" data-id="488"
-                                                        data-lastname="4" data-password="4"
-                                                        data-roles="[Role{role='ADMIN'}]"
-                                                        data-target="#myModalDelete" data-toggle="modal"
-                                                        type="button">Delete
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td><span>476</span></td>
+                                        <td><span>123</span></td>
+                                        <td><span>123</span></td>
+                                        <td><span>100</span></td>
+                                        <td><span>1231123231231@1.ru</span></td>
+                                        <td><span>123</span></td>
 
-                                <tr>
-                                    <td><span>457</span></td>
-                                    <td><span>1</span></td>
-                                    <td><span>123123</span></td>
-                                    <td><span>123123123</span></td>
-                                    <td><span>1@1.ru</span></td>
-                                    <td><span>1</span></td>
-                                    <td>
-                                        <span style="margin-right: 5px">ADMIN</span>
-                                    </td>
-                                    <td>
-                                        <div class="form-row text-center">
-                                            <div class="col-12">
-                                                <button class="btn btn-primary " data-age="123123123"
-                                                        data-email="1@1.ru" data-firstname="1" data-id="457"
-                                                        data-lastname="123123" data-password="1"
-                                                        data-roles="[Role{role='ADMIN'}]"
-                                                        data-target="#myModal" data-toggle="modal"
-                                                        type="button">Edit
-                                                </button>
+                                        <td>
+                                            <span style="margin-right: 5px">ADMIN</span><span style="margin-right: 5px">USER</span><span style="margin-right: 5px">GUEST</span><span style="margin-right: 5px">SUPERADMIN</span>
+                                        </td>
+                                        <td>
+                                            <div class="form-row text-center">
+                                                <div class="col-12">
+                                                    <button class="btn btn-primary " data-target="#myModal"
+                                                            data-toggle="modal"
+                                                            data-ID="476"
+                                                            data-age="100"
+                                                            data-email="1231123231231@1.ru"
+                                                            data-firstName="123"
+                                                            data-lastName="123"
+                                                            data-password="123"
+                                                            data-roles="[Role{role=&#39;ADMIN&#39;}, Role{role=&#39;USER&#39;}, Role{role=&#39;GUEST&#39;}, Role{role=&#39;SUPERADMIN&#39;}]"
+                                                            type="button">Edit
+                                                    </button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-row text-center">
-                                            <div class="col-12">
-                                                <button class="btn btn-danger " data-age="123123123"
-                                                        data-email="1@1.ru" data-firstname="1" data-id="457"
-                                                        data-lastname="123123" data-password="1"
-                                                        data-roles="[Role{role='ADMIN'}]"
-                                                        data-target="#myModalDelete" data-toggle="modal"
-                                                        type="button">Delete
-                                                </button>
+                                        </td>
+                                        <td>
+                                            <div class="form-row text-center">
+                                                <div class="col-12">
+                                                    <button class="btn btn-danger " data-target="#myModalDelete"
+                                                            data-toggle="modal"
+                                                            data-ID="476"
+                                                            data-age="100"
+                                                            data-email="1231123231231@1.ru"
+                                                            data-firstName="123"
+                                                            data-lastName="123"
+                                                            data-password="123"
+                                                            data-roles="[Role{role=&#39;ADMIN&#39;}, Role{role=&#39;USER&#39;}, Role{role=&#39;GUEST&#39;}, Role{role=&#39;SUPERADMIN&#39;}]"
+                                                            type="button">Delete
+                                                    </button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td><span>490</span></td>
-                                    <td><span>3</span></td>
-                                    <td><span>3</span></td>
-                                    <td><span>3</span></td>
-                                    <td><span>3@3.ru</span></td>
-                                    <td><span>3</span></td>
-                                    <td>
-                                        <span style="margin-right: 5px">GUEST</span>
-                                    </td>
-                                    <td>
-                                        <div class="form-row text-center">
-                                            <div class="col-12">
-                                                <button class="btn btn-primary " data-age="3"
-                                                        data-email="3@3.ru" data-firstname="3" data-id="490"
-                                                        data-lastname="3" data-password="3"
-                                                        data-roles="[Role{role='GUEST'}]"
-                                                        data-target="#myModal" data-toggle="modal"
-                                                        type="button">Edit
-                                                </button>
+                                    <tr>
+                                        <td><span>488</span></td>
+                                        <td><span>4</span></td>
+                                        <td><span>4</span></td>
+                                        <td><span>4</span></td>
+                                        <td><span>4email@qwe.ru</span></td>
+                                        <td><span>4</span></td>
+
+                                        <td>
+                                            <span style="margin-right: 5px">ADMIN</span>
+                                        </td>
+                                        <td>
+                                            <div class="form-row text-center">
+                                                <div class="col-12">
+                                                    <button class="btn btn-primary " data-target="#myModal"
+                                                            data-toggle="modal"
+                                                            data-ID="488"
+                                                            data-age="4"
+                                                            data-email="4email@qwe.ru"
+                                                            data-firstName="4"
+                                                            data-lastName="4"
+                                                            data-password="4"
+                                                            data-roles="[Role{role=&#39;ADMIN&#39;}]"
+                                                            type="button">Edit
+                                                    </button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-row text-center">
-                                            <div class="col-12">
-                                                <button class="btn btn-danger " data-age="3"
-                                                        data-email="3@3.ru" data-firstname="3" data-id="490"
-                                                        data-lastname="3" data-password="3"
-                                                        data-roles="[Role{role='GUEST'}]"
-                                                        data-target="#myModalDelete" data-toggle="modal"
-                                                        type="button">Delete
-                                                </button>
+                                        </td>
+                                        <td>
+                                            <div class="form-row text-center">
+                                                <div class="col-12">
+                                                    <button class="btn btn-danger " data-target="#myModalDelete"
+                                                            data-toggle="modal"
+                                                            data-ID="488"
+                                                            data-age="4"
+                                                            data-email="4email@qwe.ru"
+                                                            data-firstName="4"
+                                                            data-lastName="4"
+                                                            data-password="4"
+                                                            data-roles="[Role{role=&#39;ADMIN&#39;}]"
+                                                            type="button">Delete
+                                                    </button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><span>457</span></td>
+                                        <td><span>1</span></td>
+                                        <td><span>123123</span></td>
+                                        <td><span>123123123</span></td>
+                                        <td><span>1@1.ru</span></td>
+                                        <td><span>1</span></td>
+
+                                        <td>
+                                            <span style="margin-right: 5px">ADMIN</span>
+                                        </td>
+                                        <td>
+                                            <div class="form-row text-center">
+                                                <div class="col-12">
+                                                    <button class="btn btn-primary " data-target="#myModal"
+                                                            data-toggle="modal"
+                                                            data-ID="457"
+                                                            data-age="123123123"
+                                                            data-email="1@1.ru"
+                                                            data-firstName="1"
+                                                            data-lastName="123123"
+                                                            data-password="1"
+                                                            data-roles="[Role{role=&#39;ADMIN&#39;}]"
+                                                            type="button">Edit
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-row text-center">
+                                                <div class="col-12">
+                                                    <button class="btn btn-danger " data-target="#myModalDelete"
+                                                            data-toggle="modal"
+                                                            data-ID="457"
+                                                            data-age="123123123"
+                                                            data-email="1@1.ru"
+                                                            data-firstName="1"
+                                                            data-lastName="123123"
+                                                            data-password="1"
+                                                            data-roles="[Role{role=&#39;ADMIN&#39;}]"
+                                                            type="button">Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><span>490</span></td>
+                                        <td><span>3</span></td>
+                                        <td><span>3</span></td>
+                                        <td><span>3</span></td>
+                                        <td><span>3@3.ru</span></td>
+                                        <td><span>3</span></td>
+
+                                        <td>
+                                            <span style="margin-right: 5px">GUEST</span>
+                                        </td>
+                                        <td>
+                                            <div class="form-row text-center">
+                                                <div class="col-12">
+                                                    <button class="btn btn-primary " data-target="#myModal"
+                                                            data-toggle="modal"
+                                                            data-ID="490"
+                                                            data-age="3"
+                                                            data-email="3@3.ru"
+                                                            data-firstName="3"
+                                                            data-lastName="3"
+                                                            data-password="3"
+                                                            data-roles="[Role{role=&#39;GUEST&#39;}]"
+                                                            type="button">Edit
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-row text-center">
+                                                <div class="col-12">
+                                                    <button class="btn btn-danger " data-target="#myModalDelete"
+                                                            data-toggle="modal"
+                                                            data-ID="490"
+                                                            data-age="3"
+                                                            data-email="3@3.ru"
+                                                            data-firstName="3"
+                                                            data-lastName="3"
+                                                            data-password="3"
+                                                            data-roles="[Role{role=&#39;GUEST&#39;}]"
+                                                            type="button">Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
 
 
+                            </form>
                         </form>
                     </div>
                     <div class="tab-pane fade" id="addUser">
@@ -333,42 +367,54 @@
                                 <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                                     <div class="card card-signin my-4">
                                         <div class="card-body">
-
                                             <form action="#" id="dataAdd" method="post">
+                                                <!--                                            <form action="/admin/add" method="post">-->
                                                 <div class="form-label-group">
                                                     <label for="firstName">First Name</label>
                                                     <input class="form-control" id="firstName" name="firstName"
-                                                           placeholder="first Name" required="firstName" type="text">
+                                                           placeholder="first Name"
+                                                           required="firstName"
+                                                           type="text">
                                                 </div>
 
                                                 <div class="form-label-group">
                                                     <label for="lastName">Last Name</label>
                                                     <input class="form-control" id="lastName" name="lastName"
-                                                           placeholder="lastName" required="lastName" type="text">
+                                                           placeholder="lastName"
+                                                           required="lastName"
+                                                           type="text">
                                                 </div>
 
                                                 <div class="form-label-group">
                                                     <label for="age">Age</label>
-                                                    <input class="form-control" id="age" name="age" placeholder="age"
-                                                           required="age" type="number">
+                                                    <input class="form-control" id="age" name="age"
+                                                           placeholder="age"
+                                                           required="age"
+                                                           type="number">
                                                 </div>
 
                                                 <div class="form-label-group">
                                                     <label for="email">Email</label>
                                                     <input class="form-control" id="email" name="email"
-                                                           placeholder="email" required="email" type="email">
+                                                           placeholder="email"
+                                                           required="email"
+                                                           type="email">
                                                 </div>
 
                                                 <div class="form-label-group">
                                                     <label for="password">Password</label>
                                                     <input class="form-control" id="password" name="password"
-                                                           placeholder="password" required="password" type="password">
+                                                           placeholder="password"
+                                                           required="password"
+                                                           type="password">
                                                 </div>
 
                                                 <div class="form-label-group">
                                                     <label for="role">Role</label>
-                                                    <select class="form-control" id="ids" name="ids" placeholder="role"
-                                                            required="role" type="text">
+                                                    <select class="form-control" id="role_id" name="role_id"
+                                                            placeholder="role"
+                                                            required="role"
+                                                            type="text">
                                                         <option name="USER" value="456">GUEST</option>
                                                         <option name="admin" value="459">USER</option>
                                                         <option name="USER" value="458">ADMIN</option>
@@ -402,36 +448,40 @@
     </div>
 </div>
 <!-- Modal Edit User -->
-<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="myModal" role="dialog" tabindex="-1">
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="myModal" role="dialog"
+     tabindex="-1">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Edit user</h5>
                 <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">×</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <form action="/admin/update" method="post">
                     <div class="form-label-group">
                         <label class="col-form-label" for="idEdit">ID</label>
-                        <input class="form-control" id="idEdit" name="id" readonly="" required="" type="text"><br>
+                        <input class="form-control" id="idEdit" name="id" readonly required type="text"></br>
 
                         <label class="col-form-label" for="firstNameEdit">First Name</label>
-                        <input class="form-control" id="firstNameEdit" name="firstName" required="" type="text"><br>
+                        <input class="form-control" id="firstNameEdit" name="firstName" required
+                               type="text"></br>
 
                         <label class="col-form-label" for="lastNameEdit">Last Name</label>
-                        <input class="form-control" id="lastNameEdit" name="lastName" required="" type="text"><br>
+                        <input class="form-control" id="lastNameEdit" name="lastName" required
+                               type="text"></br>
 
                         <label class="col-form-label" for="age">Age</label>
-                        <input class="form-control" id="ageEdit" name="age" type="text"><br>
+                        <input class="form-control" id="ageEdit" name="age" type="text"></br>
 
                         <label class="col-form-label" for="email">Email</label>
-                        <input class="form-control" id="emailEdit" name="email" type="text"><br>
+                        <input class="form-control" id="emailEdit" name="email" type="text"></br>
 
 
                         <label class="col-form-label" for="password">Password</label>
-                        <input class="form-control" id="passwordEdit" name="password" required="" type="text"><br>
+                        <input class="form-control" id="passwordEdit" name="password" required
+                               type="text"></br>
 
 
                         <input item_cat="list" name="RoleUpdateID" type="checkbox" value="456">GUEST<br>
@@ -459,43 +509,42 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="exampletModalLabel">Delete user</h5>
                 <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">×</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <form action="/admin/delete" method="post">
                     <div class="form-label-group">
                         <label class="col-form-label" for="idDelete">ID</label>
-                        <input class="form-control" id="idDelete" name="idDelete" readonly="" required=""
-                               type="text"><br>
+                        <input class="form-control" id="idDelete" name="idDelete" readonly required type="text"></br>
 
                         <label class="col-form-label" for="firstNameDelete">First Name</label>
-                        <input class="form-control" id="firstNameDelete" name="firstNameDelete" readonly="" required=""
-                               type="text"><br>
+                        <input class="form-control" id="firstNameDelete" name="firstNameDelete" readonly required
+                               type="text"></br>
 
                         <label class="col-form-label" for="lastNameDelete">Last Name</label>
-                        <input class="form-control" id="lastNameDelete" name="lastNameDelete" readonly="" required=""
-                               type="text"><br>
+                        <input class="form-control" id="lastNameDelete" name="lastNameDelete" readonly required
+                               type="text"></br>
 
                         <label class="col-form-label" for="ageDelete">Age</label>
-                        <input class="form-control" id="ageDelete" name="ageDelete" readonly="" required="" type="text"><br>
+                        <input class="form-control" id="ageDelete" name="ageDelete" readonly required type="text"></br>
 
                         <label class="col-form-label" for="emailDelete">Email</label>
-                        <input class="form-control" id="emailDelete" name="emailDelete" readonly="" type="text"><br>
+                        <input class="form-control" id="emailDelete" name="emailDelete" readonly type="text"></br>
 
 
                         <label class="col-form-label" for="passwordDelete">Password</label>
-                        <input class="form-control" id="passwordDelete" name="passwordDelete" readonly="" required=""
-                               type="text"><br>
+                        <input class="form-control" id="passwordDelete" name="passwordDelete" readonly required
+                               type="text"></br>
 
 
                         <label class="col-form-label" for="role">
+                            <td>
 
-                            <span style="margin-right: 5px">ADMIN</span><span style="margin-right: 5px">USER</span><span
-                                style="margin-right: 5px">GUEST</span><span style="margin-right: 5px">SUPERADMIN</span>
-
+                            </td>
                         </label>
-                        <input class="form-control" id="role" name="role" readonly="" required="" type="text"><br>
+                        <input class="form-control" id="role" name="role" readonly required
+                               type="text"></br>
 
 
                     </div>
@@ -510,7 +559,7 @@
         </div>
     </div>
 </div>
-<script>
+<SCRIPT>
     $('#myModal').on('show.bs.modal', function (event) {
         const button = $(event.relatedTarget);
         const idEdit = button.data('id');
@@ -557,7 +606,6 @@
             alert(c_pref);
         });
     });
-</script>
-
+</SCRIPT>
 </body>
 </html>

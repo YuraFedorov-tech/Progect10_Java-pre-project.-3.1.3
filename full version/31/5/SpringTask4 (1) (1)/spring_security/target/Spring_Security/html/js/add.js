@@ -11,100 +11,81 @@ $(function ($) {
                 $(this).text('added').fadeIn(1000);
             });
             $(this).delay(500).fadeOut(500);
-            // $.ajax({
-            //     type: "POST",
-            //     url: url,
-            //     data: data,
-            //     success: sdf,
-            //     dataType: dataType
-            // });
+
             $.ajax({
-                // alert('1');
                 url: "/admin/add",
                 type: 'POST',
                 data: result,
-               // dataType: 'json',
+                // dataType: 'json',
                 context: document.getElementById('#ajax'),
 
-                success : function (data, status) {
+                success: function (data) {
                     alert('2');
                     succsess(data);
                 }
             });
-
-
         });
     });
-
-
 });
 
-function succsess(data) {
-    alert('1');
-    console.log(1);
-    console.log(data);
-    $('#someTabs a[href="#mainTab"]').tab('show');
-    //  последний блок в таблице
-    var lastElement = $('.table.table-striped  tr').last();
-    lastElement.css({border: '1px solid blue'});
 
+function succsess(data) {
+    console.log(status);
+    $('#someTabs a[href="#mainTab"]').tab('show');
     $('.table.table-striped tr:last').after(insidUser(data));
 }
 
 
-function insidUser(result) {
+function insidUser(data) {
     var deleteBtn = $('.table.table-striped tr:last td:last');
-
+    alert('insidUser');
+    console.log(data.roles[0]);
     var ans =
         '<tr>' +
-        '<td><span>' + findResultByName(result, "id") + '</span></td> ' +
-        '<td><span>' + findResultByName(result, "firstName") + '</span></td> ' +
-        '<td><span>' + findResultByName(result, "lastName") + '</span></td> ' +
-        '<td><span>' + findResultByName(result, "age") + '</span></td> ' +
-        '<td><span>' + findResultByName(result, "email") + '</span></td> ' +
-        '<td><span>' + findResultByName(result, "password") + '</span></td> ' +
-        '<td><span>' + findOneRoleByIdes(result[5].value) + '</span></td> ' +
-
-        '<td>' + findBtnEdit(result) + '</td> ' +   //  btn  Delete
-        '<td><span>' + findBtnDelete(result) + '</span></td> ' +
+        '<td><span>' + data.id + '</span></td> ' +
+        '<td><span>' + data.firstName + '</span></td> ' +
+        '<td><span>' + data.lastName + '</span></td> ' +
+        '<td><span>' + data.age + '</span></td> ' +
+        '<td><span>' + data.email + '</span></td> ' +
+        '<td><span>' + data.password + '</span></td> ' +
+        '<td><span>' + findOneRoleByIdes(data.roles) + '</span></td> ' +
+        '<td>' + findBtnEdit(data) + '</td> ' +
+        '<td><span>' + findBtnDelete(data) + '</span></td> ' +
         '</tr>';
     return ans;
 };
 
-function findBtnDelete(result) {
+function findBtnDelete(data) {
     ans = '                                        <div class="form-row text-center">\n' +
         '                                            <div class="col-12">\n' +
         '                                                <button class="btn btn-danger " ' +
-        'data-age=' + findResultByName(result, "age") + ' + ' +
-        'data-email=' + findResultByName(result, "email") + ' + ' +
-        'data-firstname=' + findResultByName(result, "firstName") + ' + ' +
-        'data-id=' + findResultByName(result, "id") + ' + ' +
-        'data-lastname=' + findResultByName(result, "lastName") + ' + ' +
-        'data-password=' + findResultByName(result, "password") + ' + ' +
-        //  'data-roles="[Role{role=\'GUEST\'}]"' +
-        'data-roles="[Role{role=\'GUEST\'}]"' +
+        'data-age=' + data.age + ' + ' +
+        'data-email=' + data.email + ' + ' +
+        'data-firstname=' + data.firstName + ' + ' +
+        'data-id=' + data.id + ' + ' +
+        'data-lastname=' + data.lastName + ' + ' +
+        'data-password=' + data.password + ' + ' +
+        'data-roles=' + data.roles + ' + ' +
         '                                                        data-target="#myModalDelete" data-toggle="modal"' +
         '                                                        type="button">Delete' +
         '                                                </button>' +
         '                                            </div>' +
         '                                        </div>';
-
     return ans;
 };
 
 
-function findBtnEdit(result) {
+function findBtnEdit(data) {
     ans = '         <div class="form-row text-center">\n' +
         '                                            <div class="col-12">\n' +
         '                                                <button class="btn btn-primary " ' +
-        'data-age=' + findResultByName(result, "age") + ' + ' +
-        'data-email=' + findResultByName(result, "email") + ' + ' +
-        'data-firstname=' + findResultByName(result, "firstName") + ' + ' +
-        'data-id=' + findResultByName(result, "id") + ' + ' +
-        'data-lastname=' + findResultByName(result, "lastName") + ' + ' +
-        'data-password=' + findResultByName(result, "password") + ' + ' +
-        //  'data-roles="[Role{role=\'GUEST\'}]"' +
-        'data-roles="[Role{role=\'GUEST\'}]"' +
+        'data-age=' + data.age + ' + ' +
+        'data-email=' + email.email + ' + ' +
+        'data-firstname=' + data.firstName + ' + ' +
+        'data-id=' + data.id + ' + ' +
+        'data-lastname=' + data.lastName + ' + ' +
+        'data-password=' + data.password + ' + ' +
+        'data-roles=' + data.roles + ' + ' +
         '                                                        data-target="#myModal" data-toggle="modal"\n' +
         '                                                        type="button">Edit\n' +
         '                                                </button>\n' +
@@ -115,18 +96,14 @@ function findBtnEdit(result) {
 };
 
 
-function findOneRoleByIdes(ids) {
-
-    if (ids.constructor == Array) {
-        var ans;
-        // var arr = ['Автомобиль', 'Грузовик', 'Автобус'];
-        // $.each(arr, function (index, value) {
-        //     alert(index);
-        //     console.log('Индекс: ' + index + '; Значение: ' + value);
-        // });
-        return ans; // если ролей много
-    }
-    return findOneRoleById(ids);  // если всего одна роль
+function findOneRoleByIdes(roles) {
+    var ans = "";
+    $.each(roles, function (index, role) {
+        ans = ans + findOneRoleById(role.id);
+        ans = ans + " ";
+        console.log(ans);
+    });
+    return ans;
 };
 
 function findOneRoleById(id) {
@@ -143,12 +120,3 @@ function findOneRoleById(id) {
 };
 
 
-findResultByName = function (result, name) {
-    var ans;
-    result.forEach(function (item, i) {
-        if (name == item.name) {
-            ans = item.value;
-        }
-    });
-    return ans;
-};

@@ -25,17 +25,12 @@ public class UserController {
 
     @PostMapping(value = "admin/add")
     public User addUser(User user, @RequestParam(required = false, name = "role_id") Long id) {
-//        int y = 1;
-//        userService.add(user, id);
-//        System.out.println(user + "add11111111111111111111");
-//        String ansJson = gson.toJson(user);
-//        System.out.println(ansJson + "addJSON11111111111111111111");
-        User newUser2=userService.findById(462L);
-    //    User newUser=userService.findModelByName("2@2");
-         Gson gson = new Gson();
-        String json = gson.toJson(newUser2, User.class);
-        System.out.println(json+ "addJSON11111111111111111111");
-        return newUser2;
+
+        userService.add(user, id);
+//         Gson gson = new Gson();
+//        String json = gson.toJson(newUser3, User.class);
+//        System.out.println(json+ "addJSON11111111111111111111");
+        return user;
     }
 
     @PostMapping(value = "admin/update")
