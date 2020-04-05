@@ -97,6 +97,7 @@ function findBtnEdit(data) {
 
 
 function findOneRoleByIdes(roles) {
+    console.log(roles);
     var ans = "";
     $.each(roles, function (index, role) {
         ans = ans + findOneRoleById(role.id);

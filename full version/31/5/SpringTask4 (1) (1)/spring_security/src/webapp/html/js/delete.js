@@ -1,55 +1,45 @@
-//
-//
-// $(function ($) {
-//     // $('#sendDataAdd').css({border: '1px solid red'});
-//     $('#sendDataAdd').click(function (e) {
-//         e.preventDefault();
-//         $('#ajax').html('<span>Send</span>').fadeIn(1000, function () {
-//             var result = $('#contactFormAdd').serializeArray();
-//             $.ajax({
-//                 url:,
-//                 type: 'POST',
-//                 data: result,
-//                 dataType: 'json',
-//                 context: document.getElementById('#ajax'),
-//                 success: function (data, status, jqXHR) {
-//                     var block = $(this);
-//                     $(this).find('span').fadeOut(1000, function () {
-//                         $(this).text('addad').fadeIn(300);
-//
-//                     });
-//                     $(this).delay(1000).fadeOut(1000, function () {
-//                         $('#down').append('<h3>' + data.firstName + '</h3>' + '<p>' + data.email + '</p>)');
-//                     });
-//                 }
-//             });
-//             alert(result);
-//         });
-//     });
-//
-// });
-
 $(function ($) {
-    // $('#sendDataAdd').css({border: '1px solid red'});
-    $('#sendDataAdd').click(function (e) {
-        alert('stop');
+    $('#btnDelete').click(function (e) {
+        alert('btnDelete');
         e.preventDefault();
-        $('#ajax').html('<span>Send</span>').fadeIn(1000, function () {
-            var result = $('#contactFormAdd').serializeArray();
-            console.log(result);
-            var block = $(this);
-            $(this).find('span').fadeOut(1000, function () {
-                $(this).text('added').fadeIn(300);
+        $('#dataDelete').click(function (e) {
+            alert('btnDelete work begin');
+            $('#ajax').html('<span>Send</span>').fadeIn(1000, function () {
+                var result = $('#dataAdd').serializeArray();
+                console.log(result);
+                var block = $(this);
+                $(this).find('span').fadeOut(1000, function () {
+                    $(this).text('added').fadeIn(1000);
+                });
+                $(this).delay(500).fadeOut(500);
 
             });
-            $(this).delay(2000).fadeOut(2000, function () {
-                $('#down').css({border: '2px solid green'});
-                $('#down').append('<h3>' + result.firstName + '</h3>' + '<p>' + result.email + '</p>'+ '<p>' + 'drsgrg'+ '</p>');
-            });
-
-            alert(result);
         });
+        // $('#ajax').html('<span>Send</span>').fadeIn(1000, function () {
+        //     var result = $('#dataDelete').serializeArray();
+        //     const button = $(e.relatedTarget);
+        //     const idDelete = button.data('id');
+        //     const modal = $(this);
+        //
+        //     console.log(result);
+        //     console.log(idDelete);
+        //     $(this).find('span').fadeOut(1000, function () {
+        //         $(this).text('added').fadeIn(1000);
+        //     });
+        //     $(this).delay(500).fadeOut(500);
+        //
+        //     // $.ajax({
+        //     //     url: "/admin/add",
+        //     //     type: 'POST',
+        //     //     data: result,
+        //     //     // dataType: 'json',
+        //     //     context: document.getElementById('#ajax'),
+        //     //
+        //     //     success: function (data) {
+        //     //         alert('2');
+        //     //         succsess(data);
+        //     //     }
+        //     // });
+        // });
     });
-
 });
-

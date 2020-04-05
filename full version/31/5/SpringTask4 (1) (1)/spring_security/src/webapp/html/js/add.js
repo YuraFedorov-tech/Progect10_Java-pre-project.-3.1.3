@@ -12,25 +12,13 @@ $(function ($) {
             });
             $(this).delay(500).fadeOut(500);
 
-            $.ajax({
-                url: "/admin/add",
-                type: 'POST',
-                data: result,
-                // dataType: 'json',
-                context: document.getElementById('#ajax'),
-
-                success: function (data) {
-                    alert('2');
-                    succsess(data);
-                }
-            });
         });
     });
 });
 
 
 function succsess(data) {
-    console.log(status);
+   // console.log(status);
     $('#someTabs a[href="#mainTab"]').tab('show');
     $('.table.table-striped tr:last').after(insidUser(data));
 }
@@ -97,6 +85,7 @@ function findBtnEdit(data) {
 
 
 function findOneRoleByIdes(roles) {
+    console.log(roles);
     var ans = "";
     $.each(roles, function (index, role) {
         ans = ans + findOneRoleById(role.id);
