@@ -14,23 +14,21 @@ $(function ($) {
                 $(this).text('added').fadeIn(1000);
             });
             $(this).delay(500).fadeOut(500);
-            var newResult = result[0].value;
-            alert(newResult);
-            $.ajax({
-                url: "/admin/delete",
-                type: 'POST',
-                data: result,
-                // dataType: 'json',
-                context: document.getElementById('#ajax'),
+            // $.ajax({
+            //     url: "/admin/delete",
+            //     type: 'POST',
+            //     data: result,
+            //     // dataType: 'json',
+            //     context: document.getElementById('#ajax'),
+            //
+            //     success: function (status) {
+            //         alert('1');
+            //         succsess2(status);
+            //     }
+            // });
 
-                success: function (status) {
-                    alert('1');
-                    succsess2(status);
-                }
-            });
-
-            // alert('1');
-            // succsess2("ok");
+            alert('1');
+            succsess2(result);
 
 
         });
@@ -38,10 +36,44 @@ $(function ($) {
 
 });
 
-function succsess2(status) {
-    console.log('succsess2');
+function succsess2(result) {
     $('#myModalDelete').modal('hide');
-    //  $('#someTabs a[href="#mainTab"]').tab('show');
+    $('.navbar-nav.mr-auto li').each(function () {
+        $(this).css({border: '1px solid red'});
+
+    });
+
+
+    //   $('.js-tableUsers').css({border: '1px solid red'});//.remove();
+//    $('.js-tableUsers').find('tr').find('span').css({border: '1px solid red'});
+    $('.js-tableUsers tr td:first-child  span').each(function () {
+        $(this).css({border: '1px solid red'});
+        var ans = $(this).text();
+        alert(ans);
+        console.log(result[0].value);
+        if(ans==result[0].value){
+            $(this).parent().parent().remove();
+        //    $(this).parent().parent().parent().remove();
+        }
+
+
+    });
+
+    // $('.js-tableUsers tr:first-child').css({border: '1px solid blue'});
+    // alert('2');
+    // $('.js-tableUsers tr').each(function (index) {
+    //     if(index==2){
+    //         alert('return');
+    //         $(this).css({border: '1px solid gold'});//строка tr
+    //         return;
+    //     }
+    //    $(this  ).find('span' , function () {
+    //             $('span').css({border: '1px solid red'});
+    //     })
+    //
+
+    // });
+
     // $('.table.table-striped tr:last').after(insidUser(data));
     alert(3);
 }

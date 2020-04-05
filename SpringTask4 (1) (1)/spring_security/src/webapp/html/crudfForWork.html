@@ -7,11 +7,11 @@
 
     <title>Admin panel</title>
 
-<!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>-->
-<!--        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>-->
+    <!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>-->
+    <!--        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>-->
 
-<!--        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">-->
-<!--        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>-->
+    <!--        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>-->
 
     <!--    <script src="http://localhost:8080/js/script.js"></script>-->
     <!--    <script src="http://localhost:8080/js/add.js"></script>-->
@@ -107,10 +107,11 @@
                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                             <h5 class="h5">All users</h5>
                         </div>
-                        //
-                        <form action="/admin/delete" method="post">
-                            <form action="#" method="post">
-                                <table class="table table-striped table-hover table-bordered">
+
+                        <!--                        <form action="/admin/delete" method="post">-->
+                        <form action="#" method="post">
+                            <table class="table table-striped table-hover js-tableUsers">
+                                <div class="qwe">
                                     <thead>
                                     <tr>
                                         <th class="h5">ID</th>
@@ -134,8 +135,10 @@
                                         <td><span>2</span></td>
 
                                         <td>
-                                            <span style="margin-right: 5px">ADMIN</span><span style="margin-right: 5px">USER</span><span
-                                                style="margin-right: 5px">GUEST</span><span style="margin-right: 5px">SUPERADMIN</span>
+                                            <span style="margin-right: 5px">ADMIN</span><span
+                                                style="margin-right: 5px">USER</span><span
+                                                style="margin-right: 5px">GUEST</span><span
+                                                style="margin-right: 5px">SUPERADMIN</span>
                                         </td>
                                         <td>
                                             <div class="form-row text-center">
@@ -182,8 +185,10 @@
                                         <td><span>123</span></td>
 
                                         <td>
-                                            <span style="margin-right: 5px">ADMIN</span><span style="margin-right: 5px">USER</span><span
-                                                style="margin-right: 5px">GUEST</span><span style="margin-right: 5px">SUPERADMIN</span>
+                                            <span style="margin-right: 5px">ADMIN</span><span
+                                                style="margin-right: 5px">USER</span><span
+                                                style="margin-right: 5px">GUEST</span><span
+                                                style="margin-right: 5px">SUPERADMIN</span>
                                         </td>
                                         <td>
                                             <div class="form-row text-center">
@@ -361,10 +366,10 @@
                                             </div>
                                         </td>
                                     </tr>
-                                </table>
+                                </div>
+                            </table>
 
 
-                            </form>
                         </form>
                     </div>
                     <div class="tab-pane fade" id="addUser">
@@ -522,7 +527,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="#" class="js-dataDelete"  method="post">
+                <form action="#" class="js-dataDelete" method="post">
 
                     <label class="col-form-label" for="idDelete">ID</label>
                     <input class="form-control" id="idDelete" name="id" readonly required type="text"></br>
