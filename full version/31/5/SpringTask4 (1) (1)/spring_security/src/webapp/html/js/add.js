@@ -12,19 +12,32 @@ $(function ($) {
             });
             $(this).delay(500).fadeOut(500);
 
+            $.ajax({
+                url: "/admin/add",
+                type: 'POST',
+                data: result,
+                // dataType: 'json',
+                context: document.getElementById('#ajax'),
+
+                success: function (data) {
+                    alert('1');
+                    succsess(data);
+                }
+            });
         });
     });
 });
 
 
 function succsess(data) {
-   // console.log(status);
+    console.log('2');
     $('#someTabs a[href="#mainTab"]').tab('show');
     $('.table.table-striped tr:last').after(insidUser(data));
 }
 
 
 function insidUser(data) {
+    console.log('3');
     var deleteBtn = $('.table.table-striped tr:last td:last');
     alert('insidUser');
     console.log(data.roles[0]);
@@ -85,7 +98,6 @@ function findBtnEdit(data) {
 
 
 function findOneRoleByIdes(roles) {
-    console.log(roles);
     var ans = "";
     $.each(roles, function (index, role) {
         ans = ans + findOneRoleById(role.id);
@@ -107,5 +119,3 @@ function findOneRoleById(id) {
     }
     return 'GUEST';
 };
-
-

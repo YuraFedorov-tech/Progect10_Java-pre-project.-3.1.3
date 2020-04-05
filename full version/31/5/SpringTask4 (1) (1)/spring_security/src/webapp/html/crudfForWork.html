@@ -7,27 +7,26 @@
 
     <title>Admin panel</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>-->
+    <!--    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>-->
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <!--    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>-->
 
     <!--    <script src="http://localhost:8080/js/script.js"></script>-->
-<!--    <script src="http://localhost:8080/js/add.js"></script>-->
-<!--    <script src="http://localhost:8080/js/delete.js"></script>-->
-<!--    <script src="http://localhost:8080/js/edit.js"></script>-->
+    <!--    <script src="http://localhost:8080/js/add.js"></script>-->
+    <!--    <script src="http://localhost:8080/js/delete.js"></script>-->
+    <!--    <script src="http://localhost:8080/js/edit.js"></script>-->
     <script src="bootstrap/js/popper.min.js"></script>
     <script src="bootstrap/js/jquery-3.4.1.min.js"></script>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" >
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="bootstrap/js/bootstrap.bundle.js"></script>
 
 
-    <script src="js/script.js"></script>
-    <script src="js/add.js"></script>
-    <script src="js/delete.js"></script>
-    <script src="js/edit.js"></script>
-
+    <!--    <script src="js/script.js"></script>-->
+    <!--    <script src="js/add.js"></script>-->
+    <!--    <script src="js/delete.js"></script>-->
+    <!--    <script src="js/edit.js"></script>-->
 
 
     <style>
@@ -420,7 +419,7 @@
                                                 </div>
 
                                                 <div class="form-label-group">
-                                                    <label for="role">Role</label>
+                                                    <label for="role_id">Role</label>
                                                     <select class="form-control" id="role_id" name="role_id"
                                                             placeholder="role"
                                                             required="role"
@@ -523,47 +522,56 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="dataDelete" action="#" method="post">
+                <form action="#" class="js-dataDelete"  method="post">
 
-                        <label class="col-form-label" for="id">ID</label>
-                        <input class="form-control" id="id" name="id" readonly required type="text"></br>
+                    <label class="col-form-label" for="idDelete">ID</label>
+                    <input class="form-control" id="idDelete" name="id" readonly required type="text"></br>
 
-                        <label class="col-form-label" for="firstNameDelete">First Name</label>
-                        <input class="form-control" id="firstNameDelete" name="firstName" readonly required
-                               type="text"></br>
+                    <label class="col-form-label" for="firstNameDelete">First Name</label>
+                    <input class="form-control" id="firstNameDelete" name="firstName" readonly required
+                           type="text"></br>
 
-                        <label class="col-form-label" for="lastNameDelete">Last Name</label>
-                        <input class="form-control" id="lastNameDelete" name="lastNameDelete" readonly required
-                               type="text"></br>
+                    <label class="col-form-label" for="lastNameDelete">Last Name</label>
+                    <input class="form-control" id="lastNameDelete" name="lastName" readonly required
+                           type="text"></br>
 
-                        <label class="col-form-label" for="ageDelete">Age</label>
-                        <input class="form-control" id="ageDelete" name="ageDelete" readonly required type="text"></br>
+                    <label class="col-form-label" for="ageDelete">Age</label>
+                    <input class="form-control" id="ageDelete" name="age" readonly required type="text"></br>
 
-                        <label class="col-form-label" for="emailDelete">Email</label>
-                        <input class="form-control" id="emailDelete" name="emailDelete" readonly type="text"></br>
-
-
-                        <label class="col-form-label" for="passwordDelete">Password</label>
-                        <input class="form-control" id="passwordDelete" name="passwordDelete" readonly required
-                               type="text"></br>
+                    <label class="col-form-label" for="emailDelete">Email</label>
+                    <input class="form-control" id="emailDelete" name="email" readonly type="text"></br>
 
 
-                        <label class="col-form-label" for="role" id="roleDelete">
-<!--                            <td>-->
-<!--                                <span style="margin-right: 5px" th:each="roles : ${Role.role}"-->
-<!--                                      th:text="${role}"></span>-->
-<!--                                <span style="margin-right: 5px" th:each="roles : ${Role.role}"-->
-<!--                                      th:text="${Role.role}"></span>-->
-<!--                            </td>-->
-                        </label>
-                        <input class="form-control" id="role" name="role" readonly required
-                               type="text"></br>
+                    <label class="col-form-label" for="passwordDelete">Password</label>
+                    <input class="form-control" id="passwordDelete" name="password" readonly required
+                           type="text"></br>
 
+
+                    <label class="col-form-label" for="rolesDelete">
+                        <td>
+                            <script type="text/javascript">
+                                console.log('th: rolesDelete');
+                                //console.log("th: rolesDelete");
+                                //console.log(role);
+                                //findOneRoleByIdes(roles);
+                                // findOneRoleByIdes(rolesDelete);
+                                document.write("Hello!");
+                            </script>
+                            <!--                            <span style="margin-right: 5px" th:each="rolesDel : ${Roles.role}"-->
+                            <!--                                  th:text="${Role.role}"></span>-->
+                        <td>
+                                <span style="margin-right: 5px" th:each="roles : ${userIn.roles}"
+                                      th:text="${roles.role}">ad</span>
+                        </td>
+                        </td>
+                    </label>
+                    <input class="form-control" id="rolesDelete" name="rolesDelete" readonly required
+                           type="text"></br>
 
 
                     <div class="modal-footer">
                         <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
-                        <button id="btnDelete" class="btn btn-primary" name="Delete" type="submit">Delete</button>
+                        <button class="btn btn-primary" id="btnDelete" name="Delete" type="submit">Delete</button>
 
                     </div>
                 </form>
@@ -598,7 +606,7 @@
         const lastNameDelete = button.data('lastname');
         const ageDelete = button.data('age');
         const passwordDelete = button.data('password');
-        const roles = button.data('roles');
+        const rolesDelete = button.data('roles');
         const modal = $(this);
 
         modal.find('#ageDelete').val(ageDelete);
@@ -607,8 +615,7 @@
         modal.find('#emailDelete').val(emailDelete);
         modal.find('#firstNameDelete').val(firstNameDelete);
         modal.find('#lastNameDelete').val(lastNameDelete);
-        modal.find('#rolesDelete').val(roles);
-        console.log(roles);
+        modal.find('#rolesDelete').val(rolesDelete);
     })
     $(function () {
         $(document).on("click", "[name=checkbox]", function () {
@@ -621,5 +628,15 @@
         });
     });
 </SCRIPT>
+<script src="bootstrap/js/popper.min.js"></script>
+<script src="bootstrap/js/jquery-3.4.1.min.js"></script>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.bundle.js"></script>
+
+
+<script src="js/script.js"></script>
+<script src="js/add.js"></script>
+<script src="js/delete.js"></script>
+<script src="js/edit.js"></script>
 </body>
 </html>

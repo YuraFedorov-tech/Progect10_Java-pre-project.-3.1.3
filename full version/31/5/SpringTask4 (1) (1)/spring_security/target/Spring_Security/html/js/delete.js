@@ -1,55 +1,68 @@
-//
-//
 // $(function ($) {
-//     // $('#sendDataAdd').css({border: '1px solid red'});
-//     $('#sendDataAdd').click(function (e) {
+//     $('#btnDelete').click(function (e) {
+//         alert('btnDelete');
 //         e.preventDefault();
-//         $('#ajax').html('<span>Send</span>').fadeIn(1000, function () {
-//             var result = $('#contactFormAdd').serializeArray();
-//             $.ajax({
-//                 url:,
-//                 type: 'POST',
-//                 data: result,
-//                 dataType: 'json',
-//                 context: document.getElementById('#ajax'),
-//                 success: function (data, status, jqXHR) {
-//                     var block = $(this);
-//                     $(this).find('span').fadeOut(1000, function () {
-//                         $(this).text('addad').fadeIn(300);
+//         $('#dataDelete').click(function (e) {
+//             alert('btnDelete work begin');
 //
-//                     });
-//                     $(this).delay(1000).fadeOut(1000, function () {
-//                         $('#down').append('<h3>' + data.firstName + '</h3>' + '<p>' + data.email + '</p>)');
-//                     });
-//                 }
+//
+//             $('#ajax').html('<span>Send</span>').fadeIn(1000, function () {
+//                 var result = $('.js-dataDelete').serializeArray();
+//                 console.log(result);
+//                 console.log(result[0].value);
+//                 //         var block = $(this);
+//                 // $(#ajax).find('span').remove();
+//                 // $(#ajax).find('span').fadeOut(1000, function () {
+//                 //     $(#ajax).text('added').fadeIn(1000);
+//                 // });
+//                 // $(#ajax).delay(500).fadeOut(500);
+//                 $.ajax({
+//                     url: "/admin/delete",
+//                     type: 'GET',
+//                     data: result[0].value,
+//                     // dataType: 'json',
+//                     context: document.getElementById('#ajax'),
+//
+//                     success: function (data, status) {
+//                         alert('2');
+//                         succsess(data, status);
+//                     }
+//                 });
+//
+//
 //             });
-//             alert(result);
-//         });
-//     });
 //
+//
+//         });
+//         // $('#ajax').html('<span>Send</span>').fadeIn(1000, function () {
+//         //     var result = $('#dataDelete').serializeArray();
+//         //     const button = $(e.relatedTarget);
+//         //     const idDelete = button.data('id');
+//         //     const modal = $(this);
+//         //
+//         //     console.log(result);
+//         //     console.log(idDelete);
+//         //     $(this).find('span').fadeOut(1000, function () {
+//         //         $(this).text('added').fadeIn(1000);
+//         //     });
+//         //     $(this).delay(500).fadeOut(500);
+//         //
+//         //     // $.ajax({
+//         //     //     url: "/admin/add",
+//         //     //     type: 'POST',
+//         //     //     data: result,
+//         //     //     // dataType: 'json',
+//         //     //     context: document.getElementById('#ajax'),
+//         //     //
+//         //     //     success: function (data) {
+//         //     //         alert('2');
+//         //     //         succsess(data);
+//         //     //     }
+//         //     // });
+//         // });
+//     });
 // });
-
-$(function ($) {
-    // $('#sendDataAdd').css({border: '1px solid red'});
-    $('#sendDataAdd').click(function (e) {
-        alert('stop');
-        e.preventDefault();
-        $('#ajax').html('<span>Send</span>').fadeIn(1000, function () {
-            var result = $('#contactFormAdd').serializeArray();
-            console.log(result);
-            var block = $(this);
-            $(this).find('span').fadeOut(1000, function () {
-                $(this).text('added').fadeIn(300);
-
-            });
-            $(this).delay(2000).fadeOut(2000, function () {
-                $('#down').css({border: '2px solid green'});
-                $('#down').append('<h3>' + result.firstName + '</h3>' + '<p>' + result.email + '</p>'+ '<p>' + 'drsgrg'+ '</p>');
-            });
-
-            alert(result);
-        });
-    });
-
-});
-
+//
+// function succsess(data, status) {
+//     alert('succsess');
+// }

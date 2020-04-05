@@ -1,6 +1,6 @@
 package web.controller;
 
-import com.google.gson.Gson;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -33,6 +33,12 @@ public class UserController {
         return user;
     }
 
+    @PostMapping(value = "admin/delete")
+    public ResponseEntity<Object> deleteUser(@RequestParam(required = false, name = "idDelete") Long id) {
+        userService.delete(userService.findById(id));
+        return ResponseEntity.ok().build();
+    }
+
     @PostMapping(value = "admin/update")
     public User postUpdateUser(User user, @RequestParam(required = false, name = "RoleUpdateID") Long[] ids) {
         userService.update(user, ids);
@@ -40,12 +46,6 @@ public class UserController {
         return user;
     }
 
-
-    @PostMapping(value = "admin/delete")
-    public String deleteUser(@RequestParam(required = false, name = "idDelete") Long id) {
-        userService.delete(userService.findById(id));
-        return "redirect:/admin/admin";
-    }
 
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public String loginPage() {

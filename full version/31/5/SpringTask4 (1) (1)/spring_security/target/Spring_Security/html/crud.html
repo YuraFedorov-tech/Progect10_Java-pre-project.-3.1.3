@@ -18,10 +18,10 @@
     <script src="http://localhost:8080/js/delete.js"></script>
     <script src="http://localhost:8080/js/edit.js"></script>
 
-    <script src="js/script.js"></script>
-    <script src="js/add.js"></script>
-    <script src="js/delete.js"></script>
-    <script src="js/edit.js"></script>
+
+    <!--    <script src="bootstrap/js/jquery-3.4.1.min.js"></script>-->
+    <!--    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" >-->
+    <!--    <script src="bootstrap/js/bootstrap.bundle.js"></script>-->
 
     <style>
         #ajax {
@@ -327,7 +327,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/admin/delete" method="post">
+                <form action="#" class="js-dataDelete" method="post">
                     <div class="form-label-group">
                         <label class="col-form-label" for="idDelete">ID</label>
                         <input class="form-control" id="idDelete" name="idDelete" readonly required type="text"></br>
@@ -365,7 +365,7 @@
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
-                        <button class="btn btn-primary" name="Delete" type="submit">Delete</button>
+                        <button class="btn btn-primary" id="btnDelete" name="Delete" type="submit">Delete</button>
 
                     </div>
                 </form>
@@ -421,6 +421,12 @@
             alert(c_pref);
         });
     });
+
 </SCRIPT>
+
+<script src="js/script.js"></script>
+<script src="js/add.js"></script>
+<script src="js/delete.js"></script>
+<script src="js/edit.js"></script>
 </body>
 </html>
