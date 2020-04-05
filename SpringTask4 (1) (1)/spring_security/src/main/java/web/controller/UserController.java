@@ -30,22 +30,18 @@ public class UserController {
     public User addUser(User user, @RequestParam(required = false, name = "role_id") Long id, HttpServletRequest req) {
 
         userService.add(user, id);
-//         Gson gson = new Gson();
-//        String json = gson.toJson(newUser3, User.class);
-//        System.out.println(json+ "addJSON11111111111111111111");
         return user;
     }
 
     @PostMapping(value = "admin/delete")
-    public ResponseEntity<Object> deleteUser(@RequestParam(required = false, name = "idDelete") Long id
-
-    ) {
-        userService.delete(userService.findById(id));
-        return ResponseEntity.ok().build();
+    public User deleteUser( @RequestParam(required = false, name = "idDelete") Long id ) {
+        User user=userService.findById(id);
+        userService.delete(user);
+        return user;
     }
 
     @PostMapping(value = "admin/update")
-    public User postUpdateUser(User user, @RequestParam(required = false, name = "RoleUpdateID") Long[] ids) {
+    public User postUpdateUser(User user, @RequestParam(required = false, name = "role_id") Long[] ids) {
         userService.update(user, ids);
         System.out.println(user + "update11111111111111111111");
         return user;
