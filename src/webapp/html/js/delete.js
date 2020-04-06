@@ -1,8 +1,7 @@
 $(function ($) {
     $('#btnDelete').click(function (e) {
         e.preventDefault();
-        var message= "unsuccess";
-        var result = $('.js-dataDelete').serializeArray();
+        alert('delete');
         $.ajax({
             url: "/admin/delete",
             type: 'POST',
@@ -10,10 +9,10 @@ $(function ($) {
             context: document.getElementById('#ajax'),
             success: function (data) {
                 succsess2(data);
-                message = 'succsess';
+                alert('succsess');
             }
         });
-        alert(message);
+
         $('#myModalDelete').modal('hide');
     });
 });

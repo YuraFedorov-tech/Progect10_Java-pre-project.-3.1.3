@@ -1,18 +1,18 @@
 $(function ($) {
     $('#btnAdd').click(function (e) {
-        alert('add')
+        alert('add');
         e.preventDefault();
         var result = $('#dataAdd').serializeArray();
-        var messageAdd = 'unsuccess';
-        $.ajax({
+          $.ajax({
             url: "/admin/add",
             type: 'POST',
             data: result,
             context: document.getElementById('#ajax'),
             success: function (data) {
-                messageAdd = 'succsess';
                 succsess(data);
+                alert('succsess');
             }
+
         });
         alert(messageAdd);
         $('#someTabs a[href="#mainTab"]').tab('show');
@@ -64,7 +64,6 @@ function findBtnDelete(data) {
 
 
 function findBtnEdit(data) {
-    console.log(data.email);
     ans = '         <div class="form-row text-center">\n' +
         '                                            <div class="col-12">\n' +
         '                                                <button class="btn btn-primary " ' +

@@ -13,21 +13,21 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 
-<!--        <script src="http://localhost:8080/bootstrap/js/popper.min.js"></script>-->
-<!--        <script src="http://localhost:8080/bootstrap/js/jquery-3.4.1.min.js"></script>-->
-<!--        <link href="http://localhost:8080/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
-<!--        <script src="http://localhost:8080/bootstrap/js/bootstrap.bundle.js"></script>-->
+    <!--        <script src="http://localhost:8080/bootstrap/js/popper.min.js"></script>-->
+    <!--        <script src="http://localhost:8080/bootstrap/js/jquery-3.4.1.min.js"></script>-->
+    <!--        <link href="http://localhost:8080/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--        <script src="http://localhost:8080/bootstrap/js/bootstrap.bundle.js"></script>-->
 
 
-<!--    <script src="bootstrap/js/popper.min.js"></script>-->
-<!--    <script src="bootstrap/js/jquery-3.4.1.min.js"></script>-->
-<!--    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
-<!--    <script src="bootstrap/js/bootstrap.bundle.js"></script>-->
+    <!--    <script src="bootstrap/js/popper.min.js"></script>-->
+    <!--    <script src="bootstrap/js/jquery-3.4.1.min.js"></script>-->
+    <!--    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--    <script src="bootstrap/js/bootstrap.bundle.js"></script>-->
 
-        <script src="http://localhost:8080/js/script.js"></script>
-        <script src="http://localhost:8080/js/add.js"></script>
-        <script src="http://localhost:8080/js/delete.js"></script>
-        <script src="http://localhost:8080/js/edit.js"></script>
+    <script src="http://localhost:8080/js/script.js"></script>
+    <script src="http://localhost:8080/js/add.js"></script>
+    <script src="http://localhost:8080/js/delete.js"></script>
+    <script src="http://localhost:8080/js/edit.js"></script>
 
     <style>
         #ajax {
@@ -143,9 +143,9 @@
                                                         data-toggle="modal"
                                                         th:data-ID="${userIn.id}"
                                                         th:data-age="${userIn.age}"
+                                                        th:data-email="${userIn.email}"
                                                         th:data-firstname="${userIn.firstName}"
                                                         th:data-lastname="${userIn.lastName}"
-                                                        th:data-email="${userIn.email}"
                                                         th:data-password="${userIn.password}"
                                                         th:data-roles="${userIn.roles}"
 
@@ -161,9 +161,9 @@
                                                         data-toggle="modal"
                                                         th:data-ID="${userIn.id}"
                                                         th:data-age="${userIn.age}"
+                                                        th:data-email="${userIn.email}"
                                                         th:data-firstname="${userIn.firstName}"
                                                         th:data-lastname="${userIn.lastName}"
-                                                        th:data-email="${userIn.email}"
                                                         th:data-password="${userIn.password}"
                                                         th:data-roles="${userIn.roles}"
                                                         type="button">Delete
@@ -358,20 +358,21 @@
                                type="text"></br>
 
 
-                        <label class="col-form-label" for="role">
-                            <td><span>Role</span>
+                        <label class="col-form-label" for="roleDelete">
+                            <!--                            <td><span>Role</span>-->
+                            <td>
                                 <span style="margin-right: 5px" th:each="roles : ${user.roles}"
                                       th:text="${roles.role}"></span>
                             </td>
                         </label>
-                        <input class="form-control" id="role" name="role" readonly required
-                               type="text"></br>
+                        <span>   <input class="form-control" id="roleDelete" name="role" readonly required
+                                        type="text"></span></br>
 
 
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
-                        <button class="btn btn-primary" id="btnDelete" name="Delete" type="submit">Delete</button>
+                        <button class="btn btn-danger" id="btnDelete" name="Delete" type="submit">Delete</button>
 
                     </div>
                 </form>
@@ -418,6 +419,7 @@
         modal.find('#firstNameDelete').val(firstNameDelete);
         modal.find('#lastNameDelete').val(lastNameDelete);
         modal.find('#roleDelete').val(roleDelete);
+        console.log(roleDelete);
     })
     $(function () {
         $(document).on("click", "[name=checkbox]", function () {

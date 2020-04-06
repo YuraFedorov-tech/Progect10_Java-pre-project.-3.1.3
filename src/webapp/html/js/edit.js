@@ -1,8 +1,7 @@
 $(function ($) {
     $('#btnEdit').click(function (e) {
         e.preventDefault();
-        var message = "unsuccess";
-        var result = $('.js-dataEdit').serializeArray();
+        alert('edite');
         $.ajax({
             url: "/admin/update",
             type: 'POST',
@@ -10,10 +9,10 @@ $(function ($) {
             context: document.getElementById('#ajax'),
             success: function (data) {
                 succsess3(data);
-                message = "succsess";
+                alert('succsess');
             }
         });
-        alert(message);
+
         $('#myModal').modal('hide');
     });
 });
