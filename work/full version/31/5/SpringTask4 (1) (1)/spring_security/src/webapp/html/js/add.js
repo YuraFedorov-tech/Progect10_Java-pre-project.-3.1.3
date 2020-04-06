@@ -22,6 +22,8 @@ $(function ($) {
 
 function succsess(data) {
     $('.table.table-striped tr:last').after(insidUser(data));
+    $('.js-tableUsers tr:last').css({border: '1px solid green'});
+    $('.js-tableUsers tr:last').addClass("js-usesrsFromMainTable");
 }
 
 
@@ -47,13 +49,13 @@ function findBtnDelete(data) {
     ans = '                                        <div class="form-row text-center">\n' +
         '                                            <div class="col-12">\n' +
         '                                                <button class="btn btn-danger " ' +
-        'data-age=' + data.age + ' + ' +
-        'data-email=' + data.email + ' + ' +
-        'data-firstname=' + data.firstName + ' + ' +
-        'data-id=' + data.id + ' + ' +
-        'data-lastname=' + data.lastName + ' + ' +
-        'data-password=' + data.password + ' + ' +
-        'data-roles=' + data.roles + ' + ' +
+        'data-id="  '+data.id    +'"'+
+        'data-firstname="  '+data.firstName    +'"'+
+        'data-lastname="  '+data.lastName    +'"'+
+        'data-age="  '+data.age    +'"'+
+        'data-email="  '+data.email    +'"'+
+        'data-password="  '+data.password    +'"'+
+        'data-roles="  '+data.roles    +'"'+
         '                                                        data-target="#myModalDelete" data-toggle="modal"' +
         '                                                        type="button">Delete' +
         '                                                </button>' +
@@ -68,13 +70,14 @@ function findBtnEdit(data) {
     ans = '         <div class="form-row text-center">\n' +
         '                                            <div class="col-12">\n' +
         '                                                <button class="btn btn-primary " ' +
-        'data-age=' + data.age + ' + ' +
-        'data-email=' + email.email + ' + ' +
-        'data-firstname=' + data.firstName + ' + ' +
-        'data-id=' + data.id + ' + ' +
-        'data-lastname=' + data.lastName + ' + ' +
-        'data-password=' + data.password + ' + ' +
-        'data-roles=' + data.roles + ' + ' +
+        'data-id="  '+data.id    +'"'+
+        'data-firstname="  '+data.firstName    +'"'+
+        'data-lastname="  '+data.lastName    +'"'+
+        'data-age="  '+data.age    +'"'+
+        'data-email="  '+data.email    +'"'+
+        'data-password="  '+data.password    +'"'+
+        'data-roles="  '+data.roles    +'"'+
+
         '                                                        data-target="#myModal" data-toggle="modal"\n' +
         '                                                        type="button">Edit\n' +
         '                                                </button>\n' +
