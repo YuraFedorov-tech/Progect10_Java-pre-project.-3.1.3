@@ -284,14 +284,14 @@
                         <input class="form-control" id="lastNameEdit" name="lastName" required
                                type="text"></br>
 
-                        <label class="col-form-label" for="age">Age</label>
+                        <label class="col-form-label" for="ageEdit">Age</label>
                         <input class="form-control" id="ageEdit" name="age" type="text"></br>
 
-                        <label class="col-form-label" for="email">Email</label>
+                        <label class="col-form-label" for="emailEdit">Email</label>
                         <input class="form-control" id="emailEdit" name="email" type="text"></br>
 
 
-                        <label class="col-form-label" for="password">Password</label>
+                        <label class="col-form-label" for="passwordEdit">Password</label>
                         <input class="form-control" id="passwordEdit" name="password" required
                                type="text"></br>
 
@@ -352,7 +352,7 @@
 
 
                         <label class="col-form-label" for="role">
-                            <td>
+                            <td><span>Role</span>
                                 <span style="margin-right: 5px" th:each="roles : ${user.roles}"
                                       th:text="${roles.role}"></span>
                             </td>
@@ -378,8 +378,8 @@
         const button = $(event.relatedTarget);
         const idEdit = button.data('id');
         const emailEdit = button.data('email');
-        const firstNameEdit = button.data('firstname');
-        const lastNameEdit = button.data('lastname');
+        const firstNameEdit = button.data('firstName');
+        const lastNameEdit = button.data('lastName');
         const ageEdit = button.data('age');
         const passwordEdit = button.data('password');
         const modal = $(this);
@@ -390,13 +390,19 @@
         modal.find('#emailEdit').val(emailEdit);
         modal.find('#firstNameEdit').val(firstNameEdit);
         modal.find('#lastNameEdit').val(lastNameEdit);
+        var result = $('.js-dataEdit').serializeArray();
+        console.log('edit:');
+        console.log(result);
+        var result2 = $('.dataAdd').serializeArray();
+        console.log('result2:');
+        console.log(result2);
     })
     $('#myModalDelete').on('show.bs.modal', function (event) {
         const button = $(event.relatedTarget);
         const idDelete = button.data('id');
         const emailDelete = button.data('email');
-        const firstNameDelete = button.data('firstname');
-        const lastNameDelete = button.data('lastname');
+        const firstNameDelete = button.data('firstName');
+        const lastNameDelete = button.data('lastName');
         const ageDelete = button.data('age');
         const passwordDelete = button.data('password');
         const roleDelete = button.data('roleDelete');

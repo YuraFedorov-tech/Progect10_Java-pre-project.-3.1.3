@@ -28,4 +28,3 @@ function succsess2(result) {
         }
     });
 }
-

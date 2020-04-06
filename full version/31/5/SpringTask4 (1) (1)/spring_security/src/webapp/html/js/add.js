@@ -1,18 +1,14 @@
 $(function ($) {
-    // $('#sendDataAdd').css({border: '1px solid red'});
     $('#btnAdd').click(function (e) {
         alert('add')
         e.preventDefault();
         var result = $('#dataAdd').serializeArray();
         var messageAdd = 'unsuccess';
-        console.log(result);
         $.ajax({
             url: "/admin/add",
             type: 'POST',
             data: result,
-            // dataType: 'json',
             context: document.getElementById('#ajax'),
-
             success: function (data) {
                 messageAdd = 'succsess';
                 succsess(data);
@@ -30,9 +26,8 @@ function succsess(data) {
 
 
 function insidUser(data) {
-    console.log('3');
-    console.log(data);
-//    console.log(data.roles[0]);
+    console.log('data');
+  //  console.log(result);
     var ans =
         '<tr>' +
         '<td><span>' + data.id + '</span></td> ' +
@@ -69,6 +64,7 @@ function findBtnDelete(data) {
 
 
 function findBtnEdit(data) {
+    console.log(data.email);
     ans = '         <div class="form-row text-center">\n' +
         '                                            <div class="col-12">\n' +
         '                                                <button class="btn btn-primary " ' +
@@ -92,9 +88,7 @@ function findBtnEdit(data) {
 function findOneRoleByIdes(roles) {
     var ans = "";
     $.each(roles, function (index, role) {
-        ans = ans + findOneRoleById(role.id);
-        ans = ans + " ";
-        console.log(ans);
+        ans = ans + findOneRoleById(role.id)+ " ";
     });
     return ans;
 };
