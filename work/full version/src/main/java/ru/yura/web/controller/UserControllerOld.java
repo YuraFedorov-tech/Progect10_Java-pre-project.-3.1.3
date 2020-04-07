@@ -4,9 +4,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import ru.yura.web.model.User;
 import ru.yura.web.service.UserService;
 
 /*
@@ -39,20 +36,14 @@ public class UserControllerOld {
 
     @GetMapping(value = "admin/admin")
     public String getAdminPanel(ModelMap modelMap, Authentication authentication) {
-   //     modelMap.addAttribute("user", authentication.getPrincipal());
-        modelMap.addAttribute("user", new User());
+        modelMap.addAttribute("user", authentication.getPrincipal());
         modelMap.addAttribute("users", userService.findAll());
         return "crud";
     }
-//
-//    @RequestMapping(value = "login", method = RequestMethod.GET)
-//    public String loginPage() {
-//        return "login";
-//    }
-//
-//    @GetMapping(value = "user")
-//    public String seeUser(ModelMap modelMap, Authentication authentication) {
-//        modelMap.addAttribute("user", authentication.getPrincipal());
-//        return "seeUser";
-//    }
+
+    @GetMapping(value = "user")
+    public String seeUser(ModelMap modelMap, Authentication authentication) {
+        modelMap.addAttribute("user", authentication.getPrincipal());
+        return "seeUser";
+    }
 }

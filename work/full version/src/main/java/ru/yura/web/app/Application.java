@@ -27,8 +27,8 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 
 import javax.persistence.EntityManagerFactory;
 
-//@SpringBootApplication
-@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
+@SpringBootApplication
+//@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 @ComponentScan(basePackages = "ru")
 @EnableJpaRepositories(basePackages = "ru")
 @EntityScan(basePackages = "ru.yura")
@@ -38,25 +38,9 @@ public class Application {
     public PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
     }
-    @Value("${my.property}")
-    private String my;
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class);
     }
 
-//    @Bean(name = "transactionManager")
-//    @Primary
-//    public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
-//        return new JpaTransactionManager(entityManagerFactory) {
-//            @Override
-//            protected void prepareSynchronization(DefaultTransactionStatus status, TransactionDefinition definition) {
-//                if (status.isNewSynchronization()) {
-//                    super.prepareSynchronization(status, definition);
-//                } else {
-//                    TransactionSynchronizationManager.setActualTransactionActive(status.hasTransaction());
-//                }
-//            }
-//        };
-//    }
 }
