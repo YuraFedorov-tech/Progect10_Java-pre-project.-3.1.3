@@ -14,7 +14,6 @@ $(function ($) {
             }
 
         });
-        alert(messageAdd);
         $('#someTabs a[href="#mainTab"]').tab('show');
     });
 });

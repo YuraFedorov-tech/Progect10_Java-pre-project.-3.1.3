@@ -45,18 +45,18 @@ public class Application {
         SpringApplication.run(Application.class);
     }
 
-    @Bean(name = "transactionManager")
-    @Primary
-    public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
-        return new JpaTransactionManager(entityManagerFactory) {
-            @Override
-            protected void prepareSynchronization(DefaultTransactionStatus status, TransactionDefinition definition) {
-                if (status.isNewSynchronization()) {
-                    super.prepareSynchronization(status, definition);
-                } else {
-                    TransactionSynchronizationManager.setActualTransactionActive(status.hasTransaction());
-                }
-            }
-        };
-    }
+//    @Bean(name = "transactionManager")
+//    @Primary
+//    public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
+//        return new JpaTransactionManager(entityManagerFactory) {
+//            @Override
+//            protected void prepareSynchronization(DefaultTransactionStatus status, TransactionDefinition definition) {
+//                if (status.isNewSynchronization()) {
+//                    super.prepareSynchronization(status, definition);
+//                } else {
+//                    TransactionSynchronizationManager.setActualTransactionActive(status.hasTransaction());
+//                }
+//            }
+//        };
+//    }
 }

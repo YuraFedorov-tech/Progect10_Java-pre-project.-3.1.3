@@ -34,9 +34,10 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public void update(User model, Long[] ids) {
-        User user=userDao.update(model);
+    public User update(User model, Long[] ids) {
+        User user = userDao.update(model);
         insideRoles(user, ids);
+        return user;
     }
 
     private void insideRoles(User model, Long[] ids) {

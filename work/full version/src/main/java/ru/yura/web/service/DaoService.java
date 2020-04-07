@@ -10,6 +10,6 @@ public interface DaoService <T> {
     void delete(T model);
     void drop();
     void create();
-    void update(T model, Long[]ids);
+    T update(T model, Long[]ids);
     T findModelByName(String name);
 }

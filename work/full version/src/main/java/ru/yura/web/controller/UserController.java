@@ -37,7 +37,7 @@ public class UserController {
 
     @PostMapping(value = "admin/update")
     public User postUpdateUser(User user, @RequestParam(required = false, name = "role_id") Long[] ids) {
-        userService.update(user, ids);
-        return user;
+        User userUpdate= userService.update(user, ids);
+        return userUpdate;
     }
 }
